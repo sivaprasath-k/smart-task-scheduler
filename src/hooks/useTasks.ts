@@ -29,8 +29,7 @@ export const useTasks = () => {
 
     const tasksQuery = query(
       collection(db, 'tasks'),
-      where('uid', '==', user.uid),
-      orderBy('date', 'asc')
+      where('uid', '==', user.uid)
     );
 
     const unsubscribe = onSnapshot(tasksQuery, (snapshot) => {
@@ -48,6 +47,9 @@ export const useTasks = () => {
         }
         return task;
       });
+      
+      // Sort by date ascending (done in JS to avoid needing Firestore composite index)
+      updatedTasks.sort((a, b) => a.date.localeCompare(b.date));
       
       setTasks(updatedTasks);
       setLoading(false);
