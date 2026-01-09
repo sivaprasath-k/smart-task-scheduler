@@ -39,16 +39,25 @@ export const useTasks = () => {
         createdAt: docSnapshot.data().createdAt?.toDate() || new Date(),
       })) as Task[];
       
-      // Update missed status for past tasks and persist to Firestore
       const today = new Date().toISOString().split('T')[0];
       const updatedTasks: Task[] = [];
       
       for (const task of tasksData) {
-        if (task.date < today && task.status === 'pending') {
-          // Update the task in Firestore to mark as missed
-          const taskRef = doc(db, 'tasks', task.id);
-          await updateDoc(taskRef, { status: 'missed' });
-          updatedTasks.push({ ...task, status: 'missed' });
+        if (task.date < today) {
+          if (task.status === 'completed') {
+            // Delete completed tasks after their day ends
+            const taskRef = doc(db, 'tasks', task.id);
+            await deleteDoc(taskRef);
+            // Don't add to updatedTasks - it's deleted
+          } else if (task.status === 'pending') {
+            // Mark pending tasks as missed
+            const taskRef = doc(db, 'tasks', task.id);
+            await updateDoc(taskRef, { status: 'missed' });
+            updatedTasks.push({ ...task, status: 'missed' });
+          } else {
+            // Keep missed tasks
+            updatedTasks.push(task);
+          }
         } else {
           updatedTasks.push(task);
         }
