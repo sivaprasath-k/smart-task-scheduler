@@ -32,23 +32,29 @@ export const useTasks = () => {
       where('uid', '==', user.uid)
     );
 
-    const unsubscribe = onSnapshot(tasksQuery, (snapshot) => {
-      const tasksData: Task[] = snapshot.docs.map((doc) => ({
-        id: doc.id,
-        ...doc.data(),
-        createdAt: doc.data().createdAt?.toDate() || new Date(),
+    const unsubscribe = onSnapshot(tasksQuery, async (snapshot) => {
+      const tasksData: Task[] = snapshot.docs.map((docSnapshot) => ({
+        id: docSnapshot.id,
+        ...docSnapshot.data(),
+        createdAt: docSnapshot.data().createdAt?.toDate() || new Date(),
       })) as Task[];
       
-      // Update missed status for past tasks
+      // Update missed status for past tasks and persist to Firestore
       const today = new Date().toISOString().split('T')[0];
-      const updatedTasks = tasksData.map(task => {
-        if (task.date < today && task.status === 'pending') {
-          return { ...task, status: 'missed' as const };
-        }
-        return task;
-      });
+      const updatedTasks: Task[] = [];
       
-      // Sort by date ascending (done in JS to avoid needing Firestore composite index)
+      for (const task of tasksData) {
+        if (task.date < today && task.status === 'pending') {
+          // Update the task in Firestore to mark as missed
+          const taskRef = doc(db, 'tasks', task.id);
+          await updateDoc(taskRef, { status: 'missed' });
+          updatedTasks.push({ ...task, status: 'missed' });
+        } else {
+          updatedTasks.push(task);
+        }
+      }
+      
+      // Sort by date ascending
       updatedTasks.sort((a, b) => a.date.localeCompare(b.date));
       
       setTasks(updatedTasks);
