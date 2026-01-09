@@ -2,14 +2,13 @@ import { initializeApp } from 'firebase/app';
 import { getAuth, GoogleAuthProvider } from 'firebase/auth';
 import { getFirestore } from 'firebase/firestore';
 
-// Firebase configuration - Replace with your actual config
 const firebaseConfig = {
-  apiKey: import.meta.env.VITE_FIREBASE_API_KEY || "demo-api-key",
-  authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN || "demo-project.firebaseapp.com",
-  projectId: import.meta.env.VITE_FIREBASE_PROJECT_ID || "demo-project",
-  storageBucket: import.meta.env.VITE_FIREBASE_STORAGE_BUCKET || "demo-project.appspot.com",
-  messagingSenderId: import.meta.env.VITE_FIREBASE_MESSAGING_SENDER_ID || "000000000000",
-  appId: import.meta.env.VITE_FIREBASE_APP_ID || "1:000000000000:web:0000000000000000000000"
+  apiKey: "AIzaSyC8J_sp4sISSDsX8DgUjzkq8J3EstlxyJc",
+  authDomain: "smart-task-date-planner.firebaseapp.com",
+  projectId: "smart-task-date-planner",
+  storageBucket: "smart-task-date-planner.firebasestorage.app",
+  messagingSenderId: "82254005292",
+  appId: "1:82254005292:web:ea5bcc48d25d991aa1fd89"
 };
 
 // Initialize Firebase
