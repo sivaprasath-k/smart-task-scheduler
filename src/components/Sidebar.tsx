@@ -1,12 +1,5 @@
 import React from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-<<<<<<< HEAD
-import { CalendarPlus, LayoutDashboard, LogOut, User } from 'lucide-react';
-import { Button } from '@/components/ui/button';
-import { useAuth } from '@/contexts/AuthContext';
-
-const Sidebar: React.FC = () => {
-=======
 import { CalendarPlus, LayoutDashboard, LogOut, User, X } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useAuth } from '@/contexts/AuthContext';
@@ -17,7 +10,6 @@ interface SidebarProps {
 }
 
 const Sidebar: React.FC<SidebarProps> = ({ isOpen = false, onClose }) => {
->>>>>>> 62a644c6a3541b2e50d3f9897ea1af155a0439e8
   const location = useLocation();
   const navigate = useNavigate();
   const { user, logout } = useAuth();
@@ -33,13 +25,6 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen = false, onClose }) => {
     }
   };
 
-<<<<<<< HEAD
-  return (
-    <aside className="fixed left-0 top-0 h-full w-64 bg-sidebar flex flex-col z-50">
-      {/* Logo Area */}
-      <div className="p-6 border-b border-sidebar-border">
-        <h1 className="text-xl font-display font-bold text-sidebar-foreground flex items-center gap-2">
-=======
   const handleNavClick = () => {
     if (onClose) onClose();
   };
@@ -56,14 +41,11 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen = false, onClose }) => {
       {/* Logo Area */}
       <div className="p-4 sm:p-6 border-b border-sidebar-border flex items-center justify-between">
         <h1 className="text-lg sm:text-xl font-display font-bold text-sidebar-foreground flex items-center gap-2">
->>>>>>> 62a644c6a3541b2e50d3f9897ea1af155a0439e8
           <div className="w-8 h-8 rounded-lg bg-gradient-to-br from-primary to-purple-500 flex items-center justify-center">
             <CalendarPlus className="w-5 h-5 text-primary-foreground" />
           </div>
           TaskFlow
         </h1>
-<<<<<<< HEAD
-=======
         {/* Close button for mobile */}
         <Button
           variant="ghost"
@@ -73,16 +55,11 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen = false, onClose }) => {
         >
           <X className="w-5 h-5" />
         </Button>
->>>>>>> 62a644c6a3541b2e50d3f9897ea1af155a0439e8
       </div>
 
       {/* Navigation */}
       <nav className="flex-1 p-4 space-y-2">
-<<<<<<< HEAD
-        <Link to="/tasks">
-=======
         <Link to="/tasks" onClick={handleNavClick}>
->>>>>>> 62a644c6a3541b2e50d3f9897ea1af155a0439e8
           <Button
             variant={isActive('/tasks') ? 'sidebar' : 'sidebar-ghost'}
             className="w-full justify-start gap-3"
@@ -91,11 +68,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen = false, onClose }) => {
             Add Task
           </Button>
         </Link>
-<<<<<<< HEAD
-        <Link to="/dashboard">
-=======
         <Link to="/dashboard" onClick={handleNavClick}>
->>>>>>> 62a644c6a3541b2e50d3f9897ea1af155a0439e8
           <Button
             variant={isActive('/dashboard') ? 'sidebar' : 'sidebar-ghost'}
             className="w-full justify-start gap-3"
@@ -109,11 +82,7 @@ const Sidebar: React.FC<SidebarProps> = ({ isOpen = false, onClose }) => {
       {/* User Section */}
       <div className="p-4 border-t border-sidebar-border">
         <div className="flex items-center gap-3 mb-4 p-3 rounded-lg bg-sidebar-accent/50">
-<<<<<<< HEAD
-          <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-purple-500 flex items-center justify-center">
-=======
           <div className="w-10 h-10 rounded-full bg-gradient-to-br from-primary to-purple-500 flex items-center justify-center flex-shrink-0">
->>>>>>> 62a644c6a3541b2e50d3f9897ea1af155a0439e8
             {user?.photoURL ? (
               <img 
                 src={user.photoURL} 

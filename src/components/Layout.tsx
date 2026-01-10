@@ -1,25 +1,13 @@
-<<<<<<< HEAD
-import React from 'react';
-import Sidebar from './Sidebar';
-=======
 import React, { useState } from 'react';
 import Sidebar from './Sidebar';
 import { Menu } from 'lucide-react';
 import { Button } from '@/components/ui/button';
->>>>>>> 62a644c6a3541b2e50d3f9897ea1af155a0439e8
 
 interface LayoutProps {
   children: React.ReactNode;
 }
 
 const Layout: React.FC<LayoutProps> = ({ children }) => {
-<<<<<<< HEAD
-  return (
-    <div className="min-h-screen">
-      <Sidebar />
-      <main className="pl-64 min-h-screen">
-        <div className="p-8">
-=======
   const [sidebarOpen, setSidebarOpen] = useState(false);
 
   return (
@@ -54,7 +42,6 @@ const Layout: React.FC<LayoutProps> = ({ children }) => {
       
       <main className="lg:pl-64 min-h-screen pt-16 lg:pt-0">
         <div className="p-4 sm:p-6 lg:p-8">
->>>>>>> 62a644c6a3541b2e50d3f9897ea1af155a0439e8
           {children}
         </div>
       </main>

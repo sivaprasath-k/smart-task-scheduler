@@ -114,17 +114,10 @@ const TaskForm: React.FC<TaskFormProps> = ({
   };
 
   return (
-<<<<<<< HEAD
-    <form onSubmit={handleSubmit} className="space-y-6">
-      <div className="space-y-2">
-        <Label htmlFor="title" className="text-sm font-medium flex items-center gap-2">
-          <Type className="w-4 h-4 text-primary" />
-=======
     <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
       <div className="space-y-1.5 sm:space-y-2">
         <Label htmlFor="title" className="text-xs sm:text-sm font-medium flex items-center gap-2">
           <Type className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-primary" />
->>>>>>> 62a644c6a3541b2e50d3f9897ea1af155a0439e8
           Title
         </Label>
         <Input
@@ -133,15 +126,6 @@ const TaskForm: React.FC<TaskFormProps> = ({
           value={formData.title}
           onChange={handleChange}
           placeholder="Enter task title..."
-<<<<<<< HEAD
-          className="bg-background"
-        />
-      </div>
-
-      <div className="space-y-2">
-        <Label htmlFor="description" className="text-sm font-medium flex items-center gap-2">
-          <FileText className="w-4 h-4 text-primary" />
-=======
           className="bg-background text-sm sm:text-base"
         />
       </div>
@@ -149,7 +133,6 @@ const TaskForm: React.FC<TaskFormProps> = ({
       <div className="space-y-1.5 sm:space-y-2">
         <Label htmlFor="description" className="text-xs sm:text-sm font-medium flex items-center gap-2">
           <FileText className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-primary" />
->>>>>>> 62a644c6a3541b2e50d3f9897ea1af155a0439e8
           Description
         </Label>
         <Textarea
@@ -159,16 +142,6 @@ const TaskForm: React.FC<TaskFormProps> = ({
           onChange={handleChange}
           placeholder="Enter task description..."
           rows={3}
-<<<<<<< HEAD
-          className="bg-background resize-none"
-        />
-      </div>
-
-      <div className="grid grid-cols-2 gap-4">
-        <div className="space-y-2">
-          <Label htmlFor="date" className="text-sm font-medium flex items-center gap-2">
-            <CalendarDays className="w-4 h-4 text-primary" />
-=======
           className="bg-background resize-none text-sm sm:text-base"
         />
       </div>
@@ -177,7 +150,6 @@ const TaskForm: React.FC<TaskFormProps> = ({
         <div className="space-y-1.5 sm:space-y-2">
           <Label htmlFor="date" className="text-xs sm:text-sm font-medium flex items-center gap-2">
             <CalendarDays className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-primary" />
->>>>>>> 62a644c6a3541b2e50d3f9897ea1af155a0439e8
             Due Date
           </Label>
           <Input
@@ -187,15 +159,6 @@ const TaskForm: React.FC<TaskFormProps> = ({
             value={formData.date}
             onChange={handleChange}
             min={format(new Date(), 'yyyy-MM-dd')}
-<<<<<<< HEAD
-            className="bg-background"
-          />
-        </div>
-
-        <div className="space-y-2">
-          <Label htmlFor="time" className="text-sm font-medium flex items-center gap-2">
-            <Clock className="w-4 h-4 text-primary" />
-=======
             className="bg-background text-sm sm:text-base"
           />
         </div>
@@ -203,7 +166,6 @@ const TaskForm: React.FC<TaskFormProps> = ({
         <div className="space-y-1.5 sm:space-y-2">
           <Label htmlFor="time" className="text-xs sm:text-sm font-medium flex items-center gap-2">
             <Clock className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-primary" />
->>>>>>> 62a644c6a3541b2e50d3f9897ea1af155a0439e8
             Due Time
           </Label>
           <Input
@@ -212,11 +174,7 @@ const TaskForm: React.FC<TaskFormProps> = ({
             type="time"
             value={formData.time}
             onChange={handleChange}
-<<<<<<< HEAD
-            className="bg-background"
-=======
             className="bg-background text-sm sm:text-base"
->>>>>>> 62a644c6a3541b2e50d3f9897ea1af155a0439e8
           />
         </div>
       </div>
@@ -224,15 +182,6 @@ const TaskForm: React.FC<TaskFormProps> = ({
       {/* Conflict Warning */}
       {showConflict && (
         <div className="animate-slide-up">
-<<<<<<< HEAD
-          <div className="flex items-start gap-3 p-4 rounded-lg bg-destructive/10 border border-destructive/20">
-            <AlertCircle className="w-5 h-5 text-destructive flex-shrink-0 mt-0.5" />
-            <div className="flex-1">
-              <p className="text-sm font-medium text-destructive">
-                This date is already booked!
-              </p>
-              <p className="text-xs text-muted-foreground mt-1">
-=======
           <div className="flex items-start gap-2 sm:gap-3 p-3 sm:p-4 rounded-lg bg-destructive/10 border border-destructive/20">
             <AlertCircle className="w-4 h-4 sm:w-5 sm:h-5 text-destructive flex-shrink-0 mt-0.5" />
             <div className="flex-1">
@@ -240,28 +189,18 @@ const TaskForm: React.FC<TaskFormProps> = ({
                 This date is already booked!
               </p>
               <p className="text-[10px] sm:text-xs text-muted-foreground mt-1">
->>>>>>> 62a644c6a3541b2e50d3f9897ea1af155a0439e8
                 Choose an available date below:
               </p>
             </div>
           </div>
 
           {freeDates.length > 0 && (
-<<<<<<< HEAD
-            <div className="mt-4 space-y-2">
-              <div className="flex items-center gap-2 text-sm text-muted-foreground">
-                <Sparkles className="w-4 h-4 text-primary" />
-                <span>Suggested free dates:</span>
-              </div>
-              <div className="flex flex-wrap gap-2">
-=======
             <div className="mt-3 sm:mt-4 space-y-2">
               <div className="flex items-center gap-2 text-xs sm:text-sm text-muted-foreground">
                 <Sparkles className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-primary" />
                 <span>Suggested free dates:</span>
               </div>
               <div className="flex flex-wrap gap-1.5 sm:gap-2">
->>>>>>> 62a644c6a3541b2e50d3f9897ea1af155a0439e8
                 {freeDates.map((date) => (
                   <Button
                     key={date}
@@ -269,11 +208,7 @@ const TaskForm: React.FC<TaskFormProps> = ({
                     variant="outline"
                     size="sm"
                     onClick={() => handleDateSuggestionClick(date)}
-<<<<<<< HEAD
-                    className="text-xs hover:bg-primary hover:text-primary-foreground transition-colors"
-=======
                     className="text-[10px] sm:text-xs hover:bg-primary hover:text-primary-foreground transition-colors h-7 sm:h-8 px-2 sm:px-3"
->>>>>>> 62a644c6a3541b2e50d3f9897ea1af155a0439e8
                   >
                     {format(new Date(date), 'MMM dd')}
                   </Button>
@@ -284,20 +219,12 @@ const TaskForm: React.FC<TaskFormProps> = ({
         </div>
       )}
 
-<<<<<<< HEAD
-      <div className="flex gap-3 pt-2">
-=======
       <div className="flex flex-col sm:flex-row gap-2 sm:gap-3 pt-2">
->>>>>>> 62a644c6a3541b2e50d3f9897ea1af155a0439e8
         <Button
           type="submit"
           variant="gradient"
           size="lg"
-<<<<<<< HEAD
-          className="flex-1"
-=======
           className="flex-1 h-10 sm:h-11 text-sm sm:text-base"
->>>>>>> 62a644c6a3541b2e50d3f9897ea1af155a0439e8
           disabled={loading || (showConflict && !editingTask)}
         >
           {loading ? (
@@ -314,10 +241,7 @@ const TaskForm: React.FC<TaskFormProps> = ({
             variant="outline"
             size="lg"
             onClick={resetForm}
-<<<<<<< HEAD
-=======
             className="h-10 sm:h-11 text-sm sm:text-base"
->>>>>>> 62a644c6a3541b2e50d3f9897ea1af155a0439e8
           >
             Cancel
           </Button>

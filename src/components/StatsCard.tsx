@@ -41,19 +41,6 @@ const StatsCard: React.FC<StatsCardProps> = ({ title, value, icon: Icon, trend, 
   const colors = colorMap[color];
 
   return (
-<<<<<<< HEAD
-    <div className="glass-card rounded-xl p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 animate-scale-in">
-      <div className="flex items-start justify-between">
-        <div className="flex-1">
-          <p className="text-sm text-muted-foreground mb-1">{title}</p>
-          <p className={`text-3xl font-bold font-display ${colors.text}`}>{value}</p>
-          {trend && (
-            <p className="text-xs text-muted-foreground mt-2">{trend}</p>
-          )}
-        </div>
-        <div className={`p-3 rounded-xl ${colors.iconBg}`}>
-          <Icon className="w-6 h-6 text-white" />
-=======
     <div className="glass-card rounded-lg sm:rounded-xl p-3 sm:p-4 lg:p-6 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 animate-scale-in">
       <div className="flex items-start justify-between gap-2">
         <div className="flex-1 min-w-0">
@@ -65,7 +52,6 @@ const StatsCard: React.FC<StatsCardProps> = ({ title, value, icon: Icon, trend, 
         </div>
         <div className={`p-2 sm:p-2.5 lg:p-3 rounded-lg sm:rounded-xl ${colors.iconBg} flex-shrink-0`}>
           <Icon className="w-4 h-4 sm:w-5 sm:h-5 lg:w-6 lg:h-6 text-white" />
->>>>>>> 62a644c6a3541b2e50d3f9897ea1af155a0439e8
         </div>
       </div>
     </div>
