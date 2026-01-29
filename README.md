@@ -2,7 +2,7 @@
 
 Welcome to the Smart-Task-Scheduler project.
 
-**Live Demo:** Check out the live demo at [https://smart-calendar-pro.vercel.app//](https://smart-calendar-pro.vercel.app/)
+**Live Demo:** Check out the live demo at [https://smart-calendar-pro.vercel.app/](https://smart-calendar-pro.vercel.app/)
 
 ## Features
 - **Secure Authentication:** Email/password and Google sign-in using Firebase Authentication.
@@ -13,11 +13,11 @@ Welcome to the Smart-Task-Scheduler project.
 ## Installation
 1. Clone the repository:
     ```bash
-   https://github.com/sivaprasath-k/event-management-portal.git
+   https://github.com/sivaprasath-k/smart-task-scheduler.git
     ```
 2. Navigate to the project folder:
     ```bash
-    cd college-event-management
+    cd smart-task-scheduler
     ```
 3. Install dependencies:
     ```bash
