@@ -2,7 +2,7 @@
 
 Welcome to the Smart-Task-Scheduler project.
 
-**Live Demo:** Check out the live demo at [(https://smart-task-schedulers.vercel.app/)/](https://smart-task-schedulers.vercel.app/)
+**Live Demo:** Check out the live demo at [(https://smart-task-schedulers.vercel.app/)](https://smart-task-schedulers.vercel.app/)
 
 ## Features
 - **Secure Authentication:** Email/password and Google sign-in using Firebase Authentication.
