@@ -34,7 +34,7 @@ Welcome to the Smart-Task-Scheduler project.
 
 ## Usage
 - Access the application via your web browser at `http://localhost:3000`.
-- For a live preview, visit [Live Demo](https://smart-calendar-pro.vercel.app).
+- For a live preview, visit [Live Demo] (https://smart-task-schedulers.vercel.app/).
 - Use the dashboard to manage tasks and plan work accordingly.
 - Refer to the documentation folder for detailed API endpoints and usage.
 
